@@ -12,10 +12,12 @@ angular.module("app").controller("peopleCtrl", function($scope, $http){
     person.bioVisable = !person.bioVisable
   };
 
-  $scope.addNewPerson = function(newName, newBio){
+  $scope.addNewPerson = function(newName, newGift, newDescription, newEmail){
     var newPerson = {
       name: newName,
-      bio: newBio
+      gift: newGift,
+      description: newDescription,
+      email: newEmail
     };
 
     $http.post('/api/v1/people.json', newPerson).then(function(response){

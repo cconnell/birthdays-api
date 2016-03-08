@@ -21,16 +21,20 @@
       <table border="1" style="width:70%">
         <th ng-click="sortBy('name')">Name</th>
         <th ng-click="sortBy('gift')">Gift</th>
+        <th ng-click="sortBy('description')">Description</th>
+        <th ng-click="sortBy('email')">Email</th>
           <tr ng-repeat="person in people | orderBy: sortByAttribute:descending">
           <td>{{person.name}}</td>
           <td>{{person.gift}}</td>
+          <td>{{person.description}}</td>
+          <td>{{person.email}}</td>
         </tr>
       </table>
 
      <!--  <li ng-repeat="person in people | filter:{name: nameFilter} | orderBy: 'name' :descending ">
-      <li ng-repeat="person in people | filter:{name: bioFilter}">
+      <li ng-repeat="person in people | filter:{name: giftFilter}">
         <p ng-click="toggleVisible(person)">{{person.name}}(<a ng-click="deletePerson(person)"</a>Delete)</p>
-        <p ng-class="{strike: person.bioVisable}">{{person.bio}}</p> -->
+        <p ng-class="{strike: person.giftVisable}">{{person.gift}}</p> -->
       </li>
     </ul>
   </div>

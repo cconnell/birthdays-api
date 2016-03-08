@@ -5,3 +5,17 @@
 .strike {
   text-decoration: line-through;
 }
+
+.ng-enter, .ng-move{
+  -webkit-animation: rollOut 1s;
+  -moz-animation: rollOut 1s;
+  -o-animation: rollOut 1s;
+  animation: rollOut 1s;
+}
+
+.ng-leave{
+  -webkit-animation: fadeOut 1s;
+  -moz-animation: fadeOut 1s;
+  -o-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+}

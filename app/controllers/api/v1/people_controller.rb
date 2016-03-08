@@ -4,7 +4,7 @@ class Api::V1::PeopleController < ApplicationController
   end
 
   def create
-    @person = Person.new(name: params[:name], bio: params[:bio])
+    @person = Person.new(name: params[:name], gift: params[:gift], description: params[:description], email: params[:email] )
 
     if @person.save
       render :show
