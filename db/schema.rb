@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306151251) do
+ActiveRecord::Schema.define(version: 20160308012724) do
 
   create_table "people", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.text     "bio",        limit: 65535
+    t.text     "gift",       limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
   end
