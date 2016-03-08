@@ -1,0 +1,38 @@
+<div ng-app="app">
+  {{ 1 + 1 }}
+  <div ng-controller="peopleCtrl" ng-init="setup()">
+  <h1>Gift Registry {{people.length}} </h1>
+  <div id="errors">
+    <ul>
+      <li ng-repeat="error in errors">{{ errors }}</li>
+    </ul>
+  </div>
+  <div>
+    Name: <input ng-model="newPersonName">
+    <br>
+    Bio: <input ng-model="newPersonGift">
+    <br>
+    <button ng-click="addNewPerson(newPersonName, newPersonGift)">Add Person</button>
+  </div>
+  Filter by name: <input ng-model="nameFilter">
+  <button ng-click="sortBy()">Sort by Name</button>
+  Filter by gift: <input ng-model="bioFilter">
+    <ul>
+      <table border="1" style="width:70%">
+        <th ng-click="sortBy('name')">Name</th>
+        <th ng-click="sortBy('gift')">Gift</th>
+          <tr ng-repeat="person in people | orderBy: sortByAttribute:descending">
+          <td>{{person.name}}</td>
+          <td>{{person.gift}}</td>
+        </tr>
+      </table>
+
+     <!--  <li ng-repeat="person in people | filter:{name: nameFilter} | orderBy: 'name' :descending ">
+      <li ng-repeat="person in people | filter:{name: bioFilter}">
+        <p ng-click="toggleVisible(person)">{{person.name}}(<a ng-click="deletePerson(person)"</a>Delete)</p>
+        <p ng-class="{strike: person.bioVisable}">{{person.bio}}</p> -->
+      </li>
+    </ul>
+  </div>
+</div>
+
